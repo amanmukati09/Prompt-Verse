@@ -27,9 +27,13 @@ const CreatePrompt = () => {
         }),
       });
 
+      console.log("Create prompt response json file : " + response.json());
+
       if (response.ok) {
         router.push("/");
       }
+
+      console.log("Create Prompt Push /");
     } catch (error) {
       console.log(error);
     } finally {

@@ -16,6 +16,8 @@ const UserProfile = ({ params }) => {
       const response = await fetch(`/api/users/${params?.id}/posts`);
       const data = await response.json();
 
+      console.log("Profile page Data : " + data);
+
       setUserPosts(data);
     };
 
