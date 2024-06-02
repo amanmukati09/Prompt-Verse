@@ -27,7 +27,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   };
 
   return (
-    <div className="prompt_card bg-slate-950">
+    <div className="prompt_card  bg-teal-400 ">
       <div className="flex justify-between items-start gap-5">
         <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer" onClick={handleProfileClick}>
           <Image
@@ -39,8 +39,8 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
           />
 
           <div className="flex flex-col">
-            <h3 className="font-satoshi font-semibold text-gray-100">{post.creator.username}</h3>
-            <p className="font-inter text-sm text-gray-200">{post.creator.email}</p>
+            <h3 className="font-satoshi font-semibold text-gray-800">{post.creator.username}</h3>
+            <p className="font-inter text-sm text-rose-800">{post.creator.email}</p>
           </div>
         </div>
 
@@ -54,9 +54,9 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
         </div>
       </div>
 
-      <p className="my-4 font-satoshi text-sm text-sky-200">{post.prompt}</p>
+      <p className="my-4 font-satoshi text-md text-white">{post.prompt}</p>
       <p
-        className="font-inter text-sm blue_gradient text-red-100 cursor-pointer"
+        className="font-inter text-sm blue_gradient text-black cursor-pointer"
         onClick={() => handleTagClick && handleTagClick(post.tag)}
       >
         #{post.tag}
@@ -64,10 +64,16 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
 
       {session?.user.id === post.creator._id && pathName === "/profile" && (
         <div className="mt-5 flex-center gap-4 border-t border-gray-100 pt-3">
-          <p className="font-inter text-sm green_gradient cursor-pointer" onClick={handleEdit}>
+          <p
+            className="font-inter text-sm text-white bg-sky-600  rounded-full px-5 py-1.5 cursor-pointer"
+            onClick={handleEdit}
+          >
             Edit
           </p>
-          <p className="font-inter text-sm orange_gradient cursor-pointer" onClick={handleDelete}>
+          <p
+            className="font-inter text-sm px-5 text-white bg-sky-600 py-1.5 rounded-full  cursor-pointer"
+            onClick={handleDelete}
+          >
             Delete
           </p>
         </div>
